@@ -1,0 +1,41 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #FAF3DD;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #4A7C59;
+    padding: 10px;
+    color: #FAF3DD;
+}
+
+#logo {
+    block-size: 100px;
+    /* border: blue dotted; */
+}
+
+h1 {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto 10px;
+}
+
+.spacer {
+    width: 100px;
+}
+
+/* ! */
+main {
+    padding-top: 100px;
+    block-size: 50px;
+}
