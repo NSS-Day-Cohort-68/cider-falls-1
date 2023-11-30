@@ -165,3 +165,16 @@ export const database = {
     // adjust this number to get a different number of guests
     guests: randomGuestsData(20)
 }
+
+export const getParkAreas = () => {
+    return database.parkAreas.map(area => ({ ...area }))
+}
+export const getServices = () => {
+    return database.services.map(service => ({ ...service }))
+}
+export const getAreaServices = () => {
+    return database.areaServices.map(areaService => ({ ...areaService }))
+}
+export const getGuests = () => {
+    return database.guests.map(guest => ({ ...guest }))
+}
