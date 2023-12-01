@@ -1,4 +1,4 @@
-import { getServices } from './database.js'
+import { getServices } from '../database/database.js'
 
 // temporary services array to be used while waiting for access to the database:
 // const services = [

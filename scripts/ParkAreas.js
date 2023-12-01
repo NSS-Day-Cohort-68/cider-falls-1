@@ -1,12 +1,12 @@
-import { getParkAreas, getServices, getAreaServices } from "../database/database.js" 
-    
+import { getParkAreas, getServices, getAreaServices } from "../database/database.js"
+
 const parkAreas = getParkAreas()
 const services = getServices()
 const areaServices = getAreaServices()
 
 //find the service for an areaService
 const findService = (areaServices, allServices) => {
-    let areaServService = null 
+    let areaServService = null
 
     for (const service of allServices) {
         if (service.id === areaServices.id) {
@@ -18,7 +18,7 @@ const findService = (areaServices, allServices) => {
 
 //find the park area for an areaService
 const findParkArea = (areaServices, allParkAreas) => {
-    let areaServArea = null
+    let areaServ = null
 
     for (const park of allParkAreas) {
         areaServ = park
@@ -30,7 +30,7 @@ export const AreaServicesHTML = () => {
     let html = `<section class="parkAreasCard">`
 
     for (const aservice of areaServices) {
-        
+
         const area = findParkArea(aservice, parkAreas)
         const service = findService(aservice, services)
 
