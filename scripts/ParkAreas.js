@@ -9,7 +9,7 @@ const findService = (areaServices, allServices) => {
     let areaServService = null
 
     for (const service of allServices) {
-        if (service.id === areaServices.id) {
+        if (service.id === areaServices.parkId) {
             areaServService = service
         }
     }
@@ -17,11 +17,13 @@ const findService = (areaServices, allServices) => {
 }
 
 //find the park area for an areaService
-const findParkArea = (areaServices, allParkAreas) => {
+const findParkArea = (areaService, allParkAreas) => {
     let areaServ = null
 
     for (const park of allParkAreas) {
-        areaServ = park
+        if (park.id === areaService.parkId) {
+            areaServ = park
+        }
     }
     return areaServ
 }
@@ -34,11 +36,11 @@ export const AreaServicesHTML = () => {
         const area = findParkArea(aservice, parkAreas)
         const service = findService(aservice, services)
 
-        html += `<h3>${area.name}</h3>
+        html += `<h3>${area.location}</h3>
                 <ul>`
         if (area.id === aservice.parkId && service.id === aservice.serviceId) {
-            html = + `<li class="services">
-                        ${service.name}
+            html += `<li class="services">
+                        ${service.service}
                         </li>`
         }
     }
