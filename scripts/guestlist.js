@@ -1,4 +1,4 @@
-import { getGuests } from "./database.js"
+import { getGuests } from "../database/database.js"
 
 const allGuests = getGuests()
 
@@ -12,7 +12,7 @@ export const GuestsList = () => {
     }
 
     guestsListHTML += "</ul>"
-    
+
     return guestsListHTML
 
 }
