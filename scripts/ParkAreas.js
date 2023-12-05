@@ -6,7 +6,7 @@ const areaServices = getAreaServices()
 
 
 //pair correct areas to services
-const linkAreaServices = (areas, services, areaServices) => {
+export const linkAreaServices = (areas, services, areaServices) => {
     let out = []
     // loop through each areaService
     for (const pairing of areaServices) {
