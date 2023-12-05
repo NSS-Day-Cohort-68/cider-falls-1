@@ -17,6 +17,24 @@ header {
     background-color: #4A7C59;
     padding: 10px;
     color: #FAF3DD;
+    box-shadow: 0 0 20px rgba(90, 90, 90, 0.663);
+}
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #4A7C59;
+}
+footer a{
+    width: 100%;
+    padding: 20px;
+    color: #FAF3DD;
+    text-decoration: none;
+}
+footer a:hover{
+    width: 100%;
+    padding: 20px;
+    color: #C8D5B9;
+    text-decoration: none;
 }
 
 #logo {
@@ -29,13 +47,80 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     margin: auto 10px;
 }
-
+h2{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .spacer {
     width: 100px;
 }
 
+ul{
+    list-style-type: circle;
+}
+
 /* ! */
+.mainbody{
+    width: 100%;
+    padding-top: 120px;
+}
 main {
-    padding-top: 150px;
-    /* block-size: 50px; */
+    float: left;
+    width: 73%;
+}
+aside{
+    float: right;
+    width: 20%;
+    height: 100vh;
+    padding: 47px;
+    overflow: auto;
+    background-color: #C8D5B9;
+}
+/* Park Areas */
+#locations-list {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    border: #68B0AB dotted 5px;
+    border-radius: 10px;
+}
+.parkAreas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 50px 0 50px;
+    text-align: left;
+    justify-content:center;
+    align-items: center;
+}
+.parkAreasCard {
+    background-color: #FAF3DD;
+    width: 15vw;
+    height: 18vh;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(90, 90, 90, 0.663);
+}
+
+.parkAreasCard:hover{
+    box-shadow: 0 0 30px rgba(74, 124, 89, 0.904);
+}
+/* Services */
+#services-list{
+    padding: 40px;
+    list-style-type: disk;
+    justify-content: center; 
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.services li:hover{
+    color: #4A7C59;
+    font-size:larger;
+}
+/* Guests */
+.guests {
+    padding: 20px;
 }
