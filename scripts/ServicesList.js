@@ -1,4 +1,4 @@
-import { getServices } from '../database/database.js'
+import { getServices } from "../database/database.js";
 
 // temporary services array to be used while waiting for access to the database:
 // const services = [
@@ -17,12 +17,12 @@ import { getServices } from '../database/database.js'
 // function to provide the html string for the services component
 // invoked in main.js within the render() function
 export const ServicesHTML = () => {
-    const services = getServices()
-    let servicesHtml = '<h2>Park Services</h2><ul>'
-    for (const service of services) {
-        servicesHtml += `<li data-id="${service.id}">${service.service}</li>`
-    }
-    servicesHtml += '</ul>'
+  const services = getServices();
+  let servicesHtml = '<section class="services"><h2>Park Services</h2><ul>';
+  for (const service of services) {
+    servicesHtml += `<li data-id="${service.id}">${service.service}</li>`;
+  }
+  servicesHtml += "</ul></section>";
 
-    return servicesHtml
-}
+  return servicesHtml;
+};
