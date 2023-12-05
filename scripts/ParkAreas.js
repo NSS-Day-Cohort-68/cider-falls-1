@@ -1,9 +1,30 @@
-import { getParkAreas, getServices, getAreaServices } from '../database/database.js'
+import { getParkAreas, getServices, getAreaServices, getGuests } from '../database/database.js'
 
 const parkAreas = getParkAreas()
 const services = getServices()
 const areaServices = getAreaServices()
+const guests = getGuests()
 
+// show the number of guests at each park area when the park area title is clicked
+document.addEventListener("click", (clickEvent) => {
+    const clickedEl = clickEvent.target
+    if (clickedEl.dataset.type === "location-title") {
+        const parkAreaId = parseInt(clickedEl.dataset.id)
+        let parkAreaName = ''
+        for (const area of parkAreas) {
+            if (area.id === parkAreaId) {
+                parkAreaName = area.location
+            }
+        }
+        let guestCounter = 0
+        for (const guest of guests) {
+            if (parkAreaId === guest.parkId) {
+                guestCounter++
+            }
+        }
+        window.alert(`${parkAreaName} currently has ${guestCounter} guests.`)
+    }
+})
 
 //pair correct areas to services
 export const linkAreaServices = (areas, services, areaServices) => {
@@ -31,13 +52,12 @@ export const linkAreaServices = (areas, services, areaServices) => {
     return out
 }
 
-
 export const AreaServicesHTML = () => {
     let html = `<section class='parkAreasCard'>`
     const pairings = linkAreaServices(parkAreas, services, areaServices)
 
     for (const area of parkAreas) {
-        html += `<h3>${area.location}</h3><ul>`
+        html += `<h3 data-type="location-title" data-id="${area.id}">${area.location}</h3><ul>`
 
         for (const pairing of pairings) {
             if (pairing.location === area.location) {
